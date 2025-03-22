@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const MONGODB_URI=process.env.MONGODB_URI!;
 if(!MONGODB_URI){
     throw new Error("MONGODB URI DOES NOT EXIST!!")
@@ -10,7 +11,7 @@ if(!cached){
 }
 
 export async function  ConnectToDb(){
-    if(!cached.conn){
+    if(cached.conn){
         return cached.conn;
     }
     if(!cached.promise){
@@ -21,10 +22,14 @@ export async function  ConnectToDb(){
           cached.promise=mongoose
                         .connect(MONGODB_URI,opts)
                         .then(()=>mongoose.connection)
+                       
+          
     }
     try {
-        cached.conn=await cached.promise
+        cached.conn=await cached.promise;
     } catch (error) {
+        console.log(error);
+        
         cached.promise=null;
         throw error;
     }
