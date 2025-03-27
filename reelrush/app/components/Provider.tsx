@@ -2,6 +2,8 @@
 
 import { ImageKitProvider} from "imagekitio-next";
 import { SessionProvider } from "next-auth/react";
+import { Bounce, ToastContainer } from "react-toastify";
+
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
@@ -29,6 +31,19 @@ export default function Provider({children}:{children:React.ReactNode}) {
       <ImageKitProvider urlEndpoint={urlEndpoint} publicKey={publicKey} authenticator={authenticator}>
         {/* ...client side upload component goes here */}
         {children}
+        <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+        />
       </ImageKitProvider>
     </SessionProvider>  
      

@@ -18,11 +18,11 @@ const userSchema=new mongoose.Schema<Iuser>(
 //Now we want to hash the password whenever it is modified:
 
 userSchema.pre("save",async function(next){
-     console.log("inside bcrypt js");
+    
      
      if(this.isModified("password")){
         this.password=await bcrypt.hash(this.password,10);
-        console.log(this.password);
+       
      }
      next();
 });
