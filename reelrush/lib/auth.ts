@@ -41,15 +41,30 @@ export const authOptions:NextAuthOptions={
          )
      ],
      callbacks:{
+        async signIn() {
+            return true; // Allow sign-in
+        },
+        async redirect({ url, baseUrl }) {
+            return url.startsWith(baseUrl) ? url : baseUrl; // Allow external redirects
+        },
         async jwt({user,token}){
+             console.log("jwt Callback",{user,token});
              if(user){
-                 token.id=user.id;
+                return {
+                    ...token,
+                    id:user.id,
+                }
              }
              return token;
         },
-        async session({session,user}){
+        async session({session,user,token}){
+            console.log("session Callback",{session,user});
             if(session.user){
-                session.user._id=user.id as string;
+                return{
+                    ...session,
+                    id:token.id
+                }
+                // session.user._id=user.id as string;
             }
             return session;
         }

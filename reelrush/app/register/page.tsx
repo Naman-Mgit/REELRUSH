@@ -36,8 +36,8 @@ const register = () => {
 
          if(!result.success){
             const formattedErrors = result.error.format();
-            console.log("formatted errore",formattedErrors);
-            // Extract error messages properly
+           
+            
             setErrors((prev)=>{return {
                 "Username":formattedErrors.Username?._errors[0] ?? "",
                 "Email": formattedErrors.Email?._errors[0] ?? "",
@@ -81,7 +81,7 @@ const register = () => {
             })
            
             toast("Registration Sucessfull!!");
-            // router.push("/login");
+            router.push("/login");
 
          } catch (error) {
             toast.error("Registration Failed");
