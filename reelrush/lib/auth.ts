@@ -50,6 +50,7 @@ export const authOptions:NextAuthOptions={
         async jwt({user,token}){
              console.log("jwt Callback",{user,token});
              if(user){
+                //passing in user id to token
                 return {
                     ...token,
                     id:user.id,
@@ -59,6 +60,7 @@ export const authOptions:NextAuthOptions={
         },
         async session({session,user,token}){
             console.log("session Callback",{session,user});
+            //passing in id from token to session
             if(session.user){
                 return{
                     ...session,
