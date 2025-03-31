@@ -41,10 +41,12 @@ class ApiClient{
         return this.fetch<IVideo>(`/videos/${id}`);
     }
     async CreateVideo(videoData:VideoFormData){
-         return this.fetch<IVideo>('/videos',{
+         const res= this.fetch<IVideo>('/videos',{
             method:"POST",
             body:videoData
          })
+         
+         return res;
     }
 
 }
