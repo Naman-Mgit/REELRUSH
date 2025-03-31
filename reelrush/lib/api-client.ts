@@ -1,6 +1,11 @@
 import { IVideo } from "@/models/Video";
 
-export type VideoFormData = Omit<IVideo, "_id">;
+export type VideoFormData = {
+     title:string;
+     description:string;
+     thumbnailUrl:string;
+     videoUrl:string;
+}
 type FetchOptions={
     method?: "GET" | "POST" | "PUT" | "DELETE",
     body?:any,

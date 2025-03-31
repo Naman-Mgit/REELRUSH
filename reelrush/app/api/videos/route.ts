@@ -12,6 +12,7 @@ export async function GET(){
      try {
         await ConnectToDb();
         const videos=await Video.find({}).sort({createdAt:-1}).lean();
+        console.log(videos,videos.length);
         if(!videos || videos.length===0){
           return NextResponse.json([],{status:400});
         }
@@ -37,7 +38,7 @@ export async function POST(request:NextRequest){
          }
          await ConnectToDb();
          const body:IVideo=await request.json()
-         if(!body.videoUrl || !body.title || !body.descrption || !body.thumbnailUrl){
+         if(!body.videoUrl || !body.title || !body.description || !body.thumbnailUrl){
             return NextResponse.json(
                 {error:"All fields are required!"},
                 {status:400}
