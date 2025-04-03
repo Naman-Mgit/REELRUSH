@@ -90,7 +90,7 @@ const register = () => {
 
   return (
      <>
-        <form action="" onSubmit={handleSubmit} className='flex flex-col items-center gap-5'>
+        <form onSubmit={handleSubmit} className='flex flex-col items-center gap-5 mt-10'>
             <div className="register text-4xl">
                 <h1>Register!</h1>
 
