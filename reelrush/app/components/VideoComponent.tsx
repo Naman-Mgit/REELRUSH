@@ -20,7 +20,7 @@ const VideoComponent = ({video}:{video:IVideo}) => {
                             },
                            ]}
                            controls={video.controls}
-                           className='w-full h-full object-cover'
+                           className='w-[500px] h-[500px] object-cover'
                          />
                     </div>
              

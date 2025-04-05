@@ -35,14 +35,25 @@ const dashboard = () => {
         return <p>Loading...</p>
       }
         return (
-    <div>
-        <button className="btn btn-wide" onClick={()=>(signOut())}>Logout</button>
-        <main className="container mx-auto px-4 py-8">
-         <h1 className="text-3xl font-bold mb-8">ReelRush</h1>
-         <VideoFeed videos={videos} />/
-         <Link href="/upload">Upload Your Videos</Link>
-        </main>
-    </div>
+              <div className='flex flex-col'>
+                   
+                
+                    <main className="container mx-auto px-4 py-8">
+                      <div className="text flex flex-row justify-between">
+                       <h1 className="text-3xl font-bold mb-8">ReelRush</h1>
+                       <button
+                          onClick={()=>(signOut())}
+                          className="px-4 py-1 bg-gray-950 w-[100px] text-white rounded-lg hover:bg-gray-800"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                      <VideoFeed videos={videos} />
+                      <Link href="/upload">
+                        <button className='btn text-xl'>Upload Videos</button>
+                      </Link>
+                    </main>
+              </div>
   )
 }
 

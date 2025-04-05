@@ -65,17 +65,23 @@ const login = () => {
         toast.error("Login failed");
     }
   }
+  const handleKeydown=async (e:React.KeyboardEvent<HTMLInputElement>)=>{
+          if(e.key==='Enter'){
+              e.preventDefault();
+          
+          }
+   }
   return (
     <>
-       <div className="form flex flex-col items-center gap-5 mt-32">
-             <h1>Login Form</h1>
-             <form  onSubmit={handleSubmit} className='flex flex-col items-center  gap-8'>
+       <div className="form flex flex-col items-center justify-center min-h-screen gap-5 ">
+             <form  onSubmit={handleSubmit} className='flex flex-col items-center  w-[400px] h-[400px] p-6 bg-gray-700 rounded-lg shadow-lg  gap-8'>
+                <h1 className='text-3xl font-bold font-sans'>Login</h1>
                 <div className="email">
-                 <input type="email" name='Email' placeholder='Email' value={form.Email} onChange={handleInput}  />
+                 <input type="email" name='Email' placeholder='Email' value={form.Email} onChange={handleInput} onKeyDown={handleKeydown} className='h-14 w-80 text-2xl border-4 border-gray-800 rounded-2xl'/>
                   {error && <p className='text-red-500'>{error.Email}</p>}
                 </div>
                 <div className="password">
-                    <input type="password" name='Password' placeholder='Password' value={form.Password} onChange={handleInput} />  
+                    <input type="password" name='Password' placeholder='Password' value={form.Password} onChange={handleInput} className='h-14 w-80 text-2xl border-4 border-gray-800 rounded-2xl' />  
                     {error && <p className='text-red-500'>{error.Password}</p>}
                 </div>
                 <div className="submit">
