@@ -13,9 +13,13 @@ const dashboard = () => {
   const router = useRouter();
   useEffect(()=>{
      
+  
      console.log(status);
      if(status==="unauthenticated"){
-        router.push('/login');
+       
+         router.push('/login')
+
+      
      }
   },[status,router])
   const [videos, setVideos] = useState<IVideo[]>([]);

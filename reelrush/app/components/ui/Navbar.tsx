@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import AuthButtons from './AuthButtons';
 import { Menu } from 'lucide-react';
-
+import { useSession } from 'next-auth/react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const {data:session,status}=useSession();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -41,7 +41,8 @@ const Navbar = () => {
             <a href="#" className="text-white/80 hover:text-reel-primary transition-colors">Categories</a>
             <a href="#" className="text-white/80 hover:text-reel-primary transition-colors">About</a>
           </nav>
-          <AuthButtons />
+          {status==="unauthenticated" &&  <AuthButtons />}
+           
         </div>
 
         {/* Mobile menu button */}
@@ -64,7 +65,7 @@ const Navbar = () => {
               <a href="#" className="text-white/80 hover:text-reel-primary py-2 transition-colors">Categories</a>
               <a href="#" className="text-white/80 hover:text-reel-primary py-2 transition-colors">About</a>
             </nav>
-            <AuthButtons />
+            {status==="unauthenticated" &&  <AuthButtons />}
           </div>
         </div>
       )}

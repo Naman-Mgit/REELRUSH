@@ -1,8 +1,9 @@
 import React from 'react';
-
+import { useRouter } from 'next/navigation';
 import { Search } from 'lucide-react';
 
 const HeroSection = () => {
+  const router=useRouter();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Effect */}
@@ -27,7 +28,7 @@ const HeroSection = () => {
           Join millions of users on the fastest growing video platform.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className=" btn btn-primary bg-reel-primary hover:bg-reel-primary/80 text-white px-8 py-6 text-lg">
+          <button onClick={()=>(router.push("/dashboard"))} className=" btn btn-primary bg-reel-primary hover:bg-reel-primary/80 text-white px-8 py-6 text-lg">
             Create Reel
           </button>
           <button  className=" btn-outline flex flex-row border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg">
