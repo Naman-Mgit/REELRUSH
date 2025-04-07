@@ -31,7 +31,7 @@ const HeroSection = () => {
           <button onClick={()=>(router.push("/dashboard"))} className=" btn btn-primary bg-reel-primary hover:bg-reel-primary/80 text-white px-8 py-6 text-lg">
             Create Reel
           </button>
-          <button  className=" btn-outline flex flex-row border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg">
+          <button onClick={()=>(router.push("/trending"))} className=" btn-outline flex flex-row border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg">
             <Search className="mr-2 h-5 w-5" />
             Explore Trending
           </button>
