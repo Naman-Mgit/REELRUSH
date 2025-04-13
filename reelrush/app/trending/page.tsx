@@ -1,16 +1,15 @@
 "use client"
 import React from 'react'
 import { Bell, CircleUserRound, Link, Plus, Search } from 'lucide-react'
-import { IKVideo } from 'imagekitio-next';
+
 import { useRouter } from 'next/navigation';
-const router=useRouter();
 interface DVideo{
-   id:number,
+  id:number,
    title:string,
    description:string,
    url:string
-}
-const dummyData = [
+  }
+  const dummyData = [
   {
     id: 1,
     title: "Nature Waterfall",
@@ -59,29 +58,18 @@ const dummyData = [
     description: "A playful kitten in action",
     url: "https://samplelib.com/lib/preview/mp4/sample-30s.mp4",
   },
-  {
-    id: 9,
-    title: "Food Preparation",
-    description: "Satisfying food cutting and prep",
-    url: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-  },
-  {
-    id: 10,
-    title: "Mountains Aerial View",
-    description: "Aerial view of mountain landscape",
-    url: "https://samplelib.com/lib/preview/mp4/sample-5mb.mp4",
-  },
+  
 ];
 const VideoCompo=({video}:{video:DVideo})=>{
-   return (
+  return (
     <div className="card bg-base-100 shadow hover:shadow-lg transition-all duration-300">
         <figure className="relative px-1 pt-4">
         <video
         controls
-        className="w-full h-auto"
+        className="w-[350px] md:w-full h-auto"
         preload="metadata"
         poster="/placeholder.png" // optional
-      >
+        >
         <source src={video.url} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -99,6 +87,8 @@ const VideoCompo=({video}:{video:DVideo})=>{
    )
 }
 const trending = () => {
+  const router=useRouter();
+  
   return (
     <div>
      <nav className='grid grid-cols-2 md:grid-cols-3 py-4  px-3 items-center bg-black'>
@@ -123,7 +113,7 @@ const trending = () => {
                <Search />
           </div>
      </nav>
-        <div className='container grid grid-cols-1 md:grid-cols-3 gap-3 items-center justify-center'>
+        <div className='container grid grid-cols-1 md:grid-cols-3 gap-7 pl-20  justify-center'>
             {
               dummyData.map((video)=>(
                  <VideoCompo key={video.id} video={video}/>
