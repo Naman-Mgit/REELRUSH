@@ -102,8 +102,7 @@ npm run dev
 
 ---
 
-## 📽️ Demo Video
-(Insert link if available)
+
 
 ---
 
