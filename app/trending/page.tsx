@@ -86,7 +86,7 @@ const VideoCompo=({video}:{video:DVideo})=>{
    </div>
    )
 }
-const trending = () => {
+const Trending = () => {
   const router=useRouter();
   
   return (
@@ -125,4 +125,4 @@ const trending = () => {
   )
 }
 
-export default trending
+export default Trending

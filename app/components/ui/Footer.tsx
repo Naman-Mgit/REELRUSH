@@ -1,58 +1,58 @@
 
 import React from 'react';
-
+import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="bg-reel-dark-accent border-t border-reel-gray-dark py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="mb-6 md:mb-0">
-            <a href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-block mb-4">
               <span className="text-2xl font-bold text-gradient-primary">REELRUSH</span>
-            </a>
+            </Link>
             <p className="text-white/60 mb-4">
               Share your moments in short, captivating reels. Join our community of creators and viewers.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/60 hover:text-reel-primary transition-colors">
+              <Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">
                 Twitter
-              </a>
-              <a href="#" className="text-white/60 hover:text-reel-primary transition-colors">
+              </Link>
+              <Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">
                 Instagram
-              </a>
-              <a href="#" className="text-white/60 hover:text-reel-primary transition-colors">
+              </Link>
+              <Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">
                 TikTok
-              </a>
+              </Link>
             </div>
           </div>
 
           <div>
             <h3 className="text-white font-medium text-lg mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Careers</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Press</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Contact</a></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">About Us</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Careers</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Press</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-medium text-lg mb-4">Resources</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Community Guidelines</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Creator Academy</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Safety Center</a></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Help Center</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Community Guidelines</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Creator Academy</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Safety Center</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-medium text-lg mb-4">Legal</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Cookie Policy</a></li>
-              <li><a href="#" className="text-white/60 hover:text-reel-primary transition-colors">Intellectual Property</a></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Terms of Service</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Cookie Policy</Link></li>
+              <li><Link href="#" className="text-white/60 hover:text-reel-primary transition-colors">Intellectual Property</Link></li>
             </ul>
           </div>
         </div>

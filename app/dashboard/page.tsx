@@ -8,8 +8,8 @@ import { IVideo } from '@/models/Video';
 import { toast } from 'react-toastify';
 import VideoFeed from '../components/VideoFeed';
 import Link from 'next/link';
-const dashboard = () => {
-  const { data: session, status } = useSession();
+const Dashboard = () => {
+  const { status } = useSession();
   const router = useRouter();
   useEffect(()=>{
      
@@ -61,4 +61,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard

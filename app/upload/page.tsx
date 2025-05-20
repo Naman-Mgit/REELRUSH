@@ -2,7 +2,7 @@
 import React from 'react'
 import VideoUploadForm from '../components/VideoUploadForm'
 
-const upload = () => {
+const Upload = () => {
   return (
     <div className="container mx-auto mt-16 w-[800px] px-4 py-8 bg-gray-950 rounded-lg shadow-lg">
       <div className="max-w-2xl mx-auto   ">
@@ -13,4 +13,4 @@ const upload = () => {
   )
 }
 
-export default upload
+export default Upload

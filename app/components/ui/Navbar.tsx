@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import AuthButtons from './AuthButtons';
 import { Menu } from 'lucide-react';
 import { useSession } from 'next-auth/react';
-
+import Link from 'next/link';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,10 +36,10 @@ const Navbar = () => {
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center space-x-6">
-            <a href="#" className="text-white/80 hover:text-reel-primary transition-colors">Home</a>
-            <a href="#" className="text-white/80 hover:text-reel-primary transition-colors">Trending</a>
-            <a href="#" className="text-white/80 hover:text-reel-primary transition-colors">Categories</a>
-            <a href="#" className="text-white/80 hover:text-reel-primary transition-colors">About</a>
+            <Link href="#" className="text-white/80 hover:text-reel-primary transition-colors">Home</Link>
+            <Link href="/trending" className="text-white/80 hover:text-reel-primary transition-colors">Trending</Link>
+            <Link href="#" className="text-white/80 hover:text-reel-primary transition-colors">Categories</Link>
+            <Link href="#" className="text-white/80 hover:text-reel-primary transition-colors">About</Link>
           </nav>
           {status==="unauthenticated" &&  <AuthButtons />}
            

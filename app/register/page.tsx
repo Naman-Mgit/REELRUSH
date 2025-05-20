@@ -6,10 +6,10 @@ import z  from "zod"
 import { registerSchema } from '@/lib/validation';
 import { toast } from 'react-toastify';
 
-type RegisterFormData = z.infer<typeof registerSchema>;
+// type RegisterFormData = z.infer<typeof registerSchema>;
 
 
-const register = () => {
+const Register = () => {
   interface Iform{
        Username:string;
        Email:string;
@@ -41,7 +41,7 @@ const register = () => {
             const formattedErrors = result.error.format();
            
             
-            setErrors((prev)=>{return {
+            setErrors(()=>{return {
                 "Username":formattedErrors.Username?._errors[0] ?? "",
                 "Email": formattedErrors.Email?._errors[0] ?? "",
                 "Password": formattedErrors.Password?._errors[0] ?? "",
@@ -135,4 +135,4 @@ const register = () => {
   )
 }
 
-export default register
+export default Register

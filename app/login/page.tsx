@@ -6,7 +6,7 @@ import { loginSchema } from '@/lib/validation';
 import { toast } from 'react-toastify';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-const login = () => {
+const Login = () => {
   interface Iform{
      Email:string,
      Password:string
@@ -95,4 +95,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default Login;
